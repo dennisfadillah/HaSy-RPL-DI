@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+<?php
+include "koneksi.php";
+
+
+?>
+
+
+
+
 <html>
 <head>
   <title>Input Barang</title>
