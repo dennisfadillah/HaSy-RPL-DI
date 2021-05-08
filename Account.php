@@ -1,7 +1,5 @@
 <?php
 
-
-
 class Akun{
   private $username;
   private $password;

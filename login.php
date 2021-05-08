@@ -1,34 +1,19 @@
-<?php
-class Login extends Akun{
-  private $username;
-  private $password;
-
-  public function __construct($username, $password)
-  {
-    $this->username = $username;
-    $this->password = $password;
-  }
+<?php 
+include 'koneksi.php';
  
-
-  // Methods
-  function set_username($username) {
-    $this->username = $username;
-  }
-  function get_username() {
-    return $this->username;
-  }
-  function set_password($password) {
-    $this->password = $password;
-  }
-  function get_password() {
-    return $this->password;
-  }
-  function masuk() {
-      #melakukan proses pengecekan username ddengan password pada database
-  }
+$username = $_POST['username'];
+$password = md5($_POST['password']);
+ 
+$login = mysql_query("select * from customer where username='$username' and password='$password'");
+$cek = mysql_num_rows($login);
+ 
+if($cek > 0){
+	session_start();
+	$_SESSION['username'] = $username;
+	$_SESSION['status'] = "login";
+	header("location:admin/index.php");
+}else{
+	header("location:index.php");	
 }
-
-Login(masuk) #pemanggilan fungsi masuk pada class login yang di extend dari kelas Akun
-
+ 
 ?>
-
