@@ -1,4 +1,4 @@
 <html>
-    <?php header('location:ItemList.php'); 
+    <?php header('location:updateAkun.php'); 
     ?>
 </html>
