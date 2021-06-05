@@ -1,3 +1,9 @@
+<!-- Code ini ditujukan untuk menampilkan data barang dari database ke interface. -->
+<!-- Code ini menampilkan data barang dalam bentuk tabel. Pada setiap barang terdapat 
+     button untuk melakukan update atau delete terhadap barang yang dipilih. -->
+<!-- Rujukan dokumen DPPL : hal 14 - 18 -->
+
+<!-- data yang diolah adalah data barang -->
 <?php
 include "db.php";
 ?>
@@ -34,19 +40,21 @@ include "db.php";
               <th scope="col">Action</th>
             </tr>
           </thead>
+          <!-- query untuk menampilkan data produk ke interface dari database -->
+          <!-- menggunakan looping while sampai semua data ditampilkan-->
           <?php
               $data = $mysqli->query("SELECT * FROM `produk`");
-              while ($row = $data->fetch_array()){
+              while ($row = $data->fetch_array()){ 
             ?>
           <tbody>
             <tr>
-              <td><?php echo $row['nama']?></td>
-                <td>Rp. <?php echo $row['harga']; ?></td>
+              <td><?php echo $row['nama']?></td> <!-- menampilkan nama barang -->
+                <td>Rp. <?php echo $row['harga']; ?></td> <!-- menampilkan harga barang -->
                 <td>
-                  <button class="btn btn-primary">
+                  <button class="btn btn-primary"> <!-- button untuk update data barang -->
                     Update
                   </button>
-                  <button class="btn btn-danger">
+                  <button class="btn btn-danger"> <!-- button untuk delete data barang -->
                     Delete
                   </button>
               </td>
