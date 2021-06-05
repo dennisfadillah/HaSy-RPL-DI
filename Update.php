@@ -1,6 +1,9 @@
 <?php
 
 
+    // tujuan code adalah untuk melakukan proses update data user dana menyimpanperubahan tersebut pada 
+    // database yang sudah di buat
+
     include "koneksi.php"; // menyambungkan dengan database 
     
     $name = $_GET['name']; //mengambil data name pada form update akun yang sudah di isi 
@@ -25,11 +28,11 @@
 
 
     // melakukan perbaruan cookies terhadapa data yang baru saja di update pada fungsi update
-    if ($query_update){
+    if ($query_update){ // bila berhasil update akun
         $_SESSION["user"] = $user; // melakukan perbaruan cookies pada user yang sudah terupdate
         header('Location: updateAkun.php'); // lalu mengarahkan user pada updateAkun.php
     } 
-	else{
+	else{ // bila gagal
         header('Location: updateAkun.php'); // bila gagal maka user akan di arahkan ke halaman updateAkun.php
         
     }
