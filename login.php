@@ -26,3 +26,5 @@ if($cek > 0){ // Jika $cek bernilai lebih dari 0 maka
 }else{
 	header("location:index.php");	// Apabila $cek tidak lebih dari 0 maka user akan diarahkan ke halaman index.php
 }
+
+?>
